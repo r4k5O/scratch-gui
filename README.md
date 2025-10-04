@@ -3,7 +3,7 @@
 ## **⚠️ NOTICE: Repository Migration to Mono-Repo ⚠️**
 
 The Scratch Team has migrated the `scratch-gui` module into a new mono-repo,
-[`scratch-editor`](https://github.com/scratchfoundation/scratch-editor). This independent `scratch-gui` repository
+[`scratch-editor`](https://github.com/r4k5O/scratch-editor). This independent `scratch-gui` repository
 **will be archived**. Any new issues or pull requests should be opened in the mono-repo.
 
 The new mono-repo version of `scratch-gui` is published to the NPM registry as
@@ -17,7 +17,7 @@ The new mono-repo version of `scratch-gui` is published to the NPM registry as
   reduce the chance of duplicate work.
 * We apologize for the inconvenience and greatly appreciate your help with this transition!
 
-For more information, see the [`scratch-editor` repository on GitHub](https://github.com/scratchfoundation/scratch-editor).
+For more information, see the [`scratch-editor` repository on GitHub](https://github.com/r4k5O/scratch-editor).
 
 ## Overview
 
