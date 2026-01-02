@@ -23,12 +23,20 @@ const SettingsMenu = ({
     settingsMenuOpen
 }) => (
     <div
-        className={classNames(menuBarStyles.menuBarItem, menuBarStyles.hoverable, menuBarStyles.themeMenu, {
-            [menuBarStyles.active]: settingsMenuOpen
-        })}
+        className={classNames(
+            menuBarStyles.menuBarItem,
+            menuBarStyles.hoverable,
+            menuBarStyles.themeMenu,
+            styles.settingsMenu,
+            {
+                [menuBarStyles.active]: settingsMenuOpen,
+                [styles.settingsMenuOpen]: settingsMenuOpen
+            }
+        )}
         onMouseUp={onRequestOpen}
     >
         <img
+            className={styles.settingsIcon}
             src={settingsIcon}
         />
         <span className={styles.dropdownLabel}>
@@ -38,7 +46,10 @@ const SettingsMenu = ({
                 id="gui.menuBar.settings"
             />
         </span>
-        <img src={dropdownCaret} />
+        <img
+            className={styles.settingsCaret}
+            src={dropdownCaret}
+        />
         <MenuBarMenu
             className={menuBarStyles.menuBarMenu}
             open={settingsMenuOpen}

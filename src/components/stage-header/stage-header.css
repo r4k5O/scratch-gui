@@ -64,17 +64,39 @@
     padding: 0.375rem;
     user-select: none;
     cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.stage-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px $ui-black-transparent;
 }
 
 .stage-button:active {
     background-color: $looks-transparent;
+    transform: translateY(0);
+    box-shadow: 0 2px 4px $ui-black-transparent;
 }
 
 .stage-button-icon {
     width: 100%;
     height: 100%;
+    transition: transform 0.2s ease;
 }
 
 [dir="rtl"] .stage-button-icon {
     transform: scaleX(-1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stage-button,
+    .stage-button-icon {
+        transition: none;
+    }
+
+    .stage-button:hover,
+    .stage-button:active {
+        transform: none;
+        box-shadow: none;
+    }
 }

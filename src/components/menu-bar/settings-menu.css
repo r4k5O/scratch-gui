@@ -1,5 +1,9 @@
 .icon {
     width: 1.5rem;
+    transition: transform 0.2s ease;
+}
+
+.settings-menu {
 }
 
 .theme-label {
@@ -10,11 +14,19 @@
     display: flex;
     align-items: center;
     gap: .5rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.option:hover {
+    transform: translateX(2px);
 }
 
 .check {
     margin: 0 .25rem 0 0;
     visibility: hidden;
+    opacity: 0;
+    transform: scale(0.85);
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 [dir="rtl"] .check {
@@ -23,6 +35,8 @@
 
 .selected {
     visibility: visible;
+    opacity: 1;
+    transform: scale(1);
 }
 
 .submenu-label {
@@ -39,10 +53,50 @@
 
 .expand-caret {
     transform: rotate(-90deg);
+    transition: transform 0.2s ease;
 }
 
 [dir="rtl"] .expand-caret {
     transform: rotate(90deg);
+}
+
+.settings-icon {
+    width: 1.25rem;
+    margin-right: .25rem;
+    transition: transform 0.2s ease;
+}
+
+[dir="rtl"] .settings-icon {
+    margin-left: .25rem;
+    margin-right: 0;
+}
+
+.settings-caret {
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-left: .25rem;
+    transition: transform 0.2s ease;
+}
+
+[dir="rtl"] .settings-caret {
+    margin-left: 0;
+    margin-right: .25rem;
+}
+
+.settings-menu-open .settings-icon {
+    transform: rotate(12deg);
+}
+
+.settings-menu-open .settings-caret {
+    transform: rotate(180deg);
+}
+
+.expanded-menu-item .expand-caret {
+    transform: rotate(0deg);
+}
+
+[dir="rtl"] .expanded-menu-item .expand-caret {
+    transform: rotate(0deg);
 }
 
 /* Extra padding to deal with scrollbar overlapping options in Firefox */
@@ -63,5 +117,26 @@
 @media only screen and (max-width: 1024px) {
     .dropdown-label {
         display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .icon,
+    .option,
+    .check,
+    .expand-caret,
+    .settings-icon,
+    .settings-caret {
+        transition: none;
+    }
+
+    .settings-menu-open .settings-icon,
+    .settings-menu-open .settings-caret,
+    .expanded-menu-item .expand-caret {
+        transform: none;
+    }
+
+    .option:hover {
+        transform: none;
     }
 }
