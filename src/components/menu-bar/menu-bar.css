@@ -29,6 +29,7 @@
     font-weight: bold;
     background-color: $looks-secondary;
     color: $ui-white;
+    transition: background-color 0.2s ease;
 }
 
 .main-menu {
@@ -62,6 +63,7 @@
     align-items: center;
     white-space: nowrap;
     height: $menu-bar-height;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .menu-bar-item.hoverable {
@@ -71,6 +73,7 @@
 .menu-bar-item.active,
 .menu-bar-item.hoverable:hover {
     background-color: $ui-black-transparent;
+    transform: translateY(-1px);
 }
 
 .menu-bar-item.growable {
@@ -234,5 +237,17 @@
 
     .help-icon {
         margin-right: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .menu-bar,
+    .menu-bar-item {
+        transition: none;
+    }
+
+    .menu-bar-item.active,
+    .menu-bar-item.hoverable:hover {
+        transform: none;
     }
 }
