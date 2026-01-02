@@ -2,8 +2,32 @@
 
 .community-button {
     box-shadow: 0 0 0 1px $ui-black-transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    transform: translateY(0);
 }
 
 .community-button-icon {
     height: 1.25rem;
+}
+
+.community-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px $ui-black-transparent;
+}
+
+.community-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px $ui-black-transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .community-button {
+        transition: none;
+    }
+
+    .community-button:hover,
+    .community-button:active {
+        transform: none;
+        box-shadow: 0 0 0 1px $ui-black-transparent;
+    }
 }
