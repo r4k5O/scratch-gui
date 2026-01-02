@@ -58,7 +58,10 @@ const ThemeMenu = ({
     const themeInfo = themeMap[theme];
 
     return (
-        <MenuItem expanded={menuOpen}>
+        <MenuItem
+            className={classNames({[styles.expandedMenuItem]: menuOpen})}
+            expanded={menuOpen}
+        >
             <div
                 className={styles.option}
                 onClick={onRequestOpen}

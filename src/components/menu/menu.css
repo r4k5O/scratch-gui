@@ -12,6 +12,8 @@
     overflow: visible;
     color: $ui-white;
     box-shadow: 0 8px 8px 0 $ui-black-transparent;
+    animation: menu-pop-in 160ms ease-out;
+    transform-origin: top;
 }
 
 .menu.left {
@@ -31,6 +33,7 @@
     margin: 0;
     font-weight: bold;
     position: relative;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .menu-item.active,
@@ -96,4 +99,25 @@
     background-color: $ui-black-transparent;
     border-radius: 12px;
     border: 3px solid $looks-secondary;
+}
+
+@keyframes menu-pop-in {
+    from {
+        opacity: 0;
+        transform: translateY(-6px) scaleY(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .menu {
+        animation: none;
+    }
+
+    .menu-item {
+        transition: none;
+    }
 }

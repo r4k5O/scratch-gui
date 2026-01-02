@@ -29,6 +29,7 @@
     font-weight: bold;
     background-color: $looks-secondary;
     color: $ui-white;
+    transition: background-color 0.2s ease;
 }
 
 .main-menu {
@@ -62,6 +63,7 @@
     align-items: center;
     white-space: nowrap;
     height: $menu-bar-height;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .menu-bar-item.hoverable {
@@ -71,6 +73,11 @@
 .menu-bar-item.active,
 .menu-bar-item.hoverable:hover {
     background-color: $ui-black-transparent;
+    transform: translateY(-1px);
+}
+
+.menu-bar-item.active .dropdown-caret-icon {
+    transform: rotate(180deg);
 }
 
 .menu-bar-item.growable {
@@ -180,6 +187,7 @@
 .dropdown-caret-icon {
     width: 0.5rem;
     height: 0.5rem;
+    transition: transform 0.2s ease;
 }
 
 [dir="ltr"] .dropdown-caret-icon {
@@ -234,5 +242,25 @@
 
     .help-icon {
         margin-right: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .menu-bar,
+    .menu-bar-item {
+        transition: none;
+    }
+
+    .dropdown-caret-icon {
+        transition: none;
+    }
+
+    .menu-bar-item.active,
+    .menu-bar-item.hoverable:hover {
+        transform: none;
+    }
+
+    .menu-bar-item.active .dropdown-caret-icon {
+        transform: none;
     }
 }
