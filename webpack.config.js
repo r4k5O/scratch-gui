@@ -49,6 +49,13 @@ const baseConfig = new ScratchWebpackConfigBuilder(
         resourceQuery: /^$/, // reject any query string
         type: 'asset' // let webpack decide on the best type of asset
     })
+    .addModuleRule({
+        test: /\.hex$/,
+        type: 'asset/resource',
+        generator: {
+            filename: 'static/microbit/[name][ext]'
+        }
+    })
     .addPlugin(new webpack.DefinePlugin({
         'process.env.DEBUG': Boolean(process.env.DEBUG),
         'process.env.GA_ID': `"${process.env.GA_ID || 'UA-000000-01'}"`,
@@ -92,9 +99,12 @@ const distConfig = baseConfig.clone()
         },
         output: {
             path: path.resolve(__dirname, 'dist')
+        },
+        externals: {
+            react: 'react',
+            'react-dom': 'react-dom'
         }
     })
-    .addExternals(['react', 'react-dom'])
     .addPlugin(
         new CopyWebpackPlugin({
             patterns: [
