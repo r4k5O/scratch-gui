@@ -89,17 +89,6 @@
     transform: scaleX(-1);
 }
 
-@keyframes fullscreen-header-enter {
-    from {
-        opacity: 0;
-        transform: translateY(-6px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 @media (prefers-reduced-motion: reduce) {
     .stage-button,
     .stage-button-icon {
@@ -110,9 +99,5 @@
     .stage-button:active {
         transform: none;
         box-shadow: none;
-    }
-
-    .stage-header-wrapper-overlay {
-        animation: none;
     }
 }
