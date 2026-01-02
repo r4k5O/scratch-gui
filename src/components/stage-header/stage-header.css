@@ -13,6 +13,7 @@
     left: 0;
     right: 0;
     z-index: $z-index-stage-header;
+    animation: fullscreen-header-enter 200ms ease-out;
 }
 
 .stage-menu-wrapper {

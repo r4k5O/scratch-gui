@@ -183,6 +183,7 @@
 .dropdown-caret-icon {
     width: 0.5rem;
     height: 0.5rem;
+    transition: transform 0.2s ease;
 }
 
 [dir="ltr"] .dropdown-caret-icon {
