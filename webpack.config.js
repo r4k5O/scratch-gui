@@ -129,7 +129,8 @@ const buildConfig = baseConfig.clone()
         },
         output: {
             path: path.resolve(__dirname, 'build')
-        }
+        },
+        externals: {}
     })
     .addPlugin(new HtmlWebpackPlugin({
         ...commonHtmlWebpackPluginOptions,
