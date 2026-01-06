@@ -4,24 +4,12 @@
 
 .page-wrapper {
     height: 100%;
-    transition: background-color 0.25s ease, color 0.25s ease;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .page-wrapper * {
     transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.page-wrapper svg * {
-    transition: fill 0.25s ease, stroke 0.25s ease;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .page-wrapper,
-    .page-wrapper *,
-    .page-wrapper svg * {
-        transition: none;
-    }
+        box-shadow 0.25s ease, fill 0.25s ease, stroke 0.25s ease;
 }
 
 .body-wrapper {
